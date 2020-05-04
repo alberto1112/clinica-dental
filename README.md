@@ -1,1 +1,1 @@
-# clinica-dental
+# Clinica Dental

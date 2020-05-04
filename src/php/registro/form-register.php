@@ -17,7 +17,7 @@
 		$errores=$_SESSION["errores"];
 	}
 
-    ?>
+?>
 <!DOCTYPE html>
 <html>
     <head>
