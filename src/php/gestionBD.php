@@ -3,7 +3,7 @@
     function estableceConexion(){
         $serverName = "oci:dbname=localhost/XE;charset=UTF8";
         $userName = "system";
-        $key="";
+        $key="1234";
 
         try{
             $conexion = new PDO($serverName,$userName,$key,array(PDO::ATTR_PERSISTENT => true));
