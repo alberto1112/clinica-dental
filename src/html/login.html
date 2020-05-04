@@ -3,30 +3,33 @@
     <head>
         <meta charset="UTF-8" lang="es">
         <title>Login</title>
-        <link rel="stylesheet", type="text/css", href="../css/formulario.css">
+        <link rel="stylesheet" type="text/css" href="../css/formulario.css">
     </head>
     <body>
+
         <header>
             <a href="inicio.html"><img src="../../images/logo.png" width="150" height="80" alt="logo.png"></a>
         </header>
+
         <div class="propiedades">
             <form action="" method="get">
                 <fieldset>
                     <legend>Usuario</legend>
                     <p>Nombre de Usuario: <input id="user" name="user" type="text" placeholder="Nombre de Usuario" required></p>
-                    <p>Contraseña: <input id="pass" name="pass" type="password" placeholder="Contraseña" minlength="11" required></p>
+                    <p>Contraseña: <input id="pass" name="pass" type="password" placeholder="Contraseña" minlength="8" required></p>
                 </fieldset>
                 <div class="buttons">
                     <input type="checkbox"><label>Mantenme conectado</label>
                     <input type="submit" name="logear" value="acceder">
                 </div>
-                
             </form>
         </div>
+
         <div class="mascota">
             <footer>
                 <img src="../../images/mascota.png" alt="mascota.png" width="80" height="80"> 
             </footer>
         </div>
+
     </body>
 </html>

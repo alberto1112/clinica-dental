@@ -14,13 +14,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/biblio.css" />
-  <title>Clínica Dental: ¡Se ha producido un problema!</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/biblio.css" />
+	<title>Clínica Dental: ¡Se ha producido un problema!</title>
 </head>
 <body>	
-	
-<
 
 	<div>
 		<h2>Ups!</h2>
@@ -30,11 +28,10 @@
 		<p>Ocurrió un problema para acceder a la base de datos. </p>
 		<?php } ?>
 	</div>
-		
+	
 	<div class='excepcion'>	
 		<?php echo "Información relativa al problema: $excepcion;" ?>
 	</div>
-	
 
 </body>
 </html>
