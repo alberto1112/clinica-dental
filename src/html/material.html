@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" lang="es">
+        <title>Nuevo Material</title>
+        <link rel="stylesheet" type="text/css" href="../css/Nuevo-material.css">
+    </head>
+    <body>
+        <header>
+            <a href="inicio.html"><img src="../../images/logo.png" width="150" height="80" alt="logo.png"></a>
+        </header>
+        <div class="material-propiedades">
+            <form name="nuevo-material" action="" method="POST">
+                <fieldset>
+                    <legend>Propiedades del Material</legend>
+                    <p>Nombre: <input id="name" name="name" type="text" maxlength="30" placeholder="Nombre del material" required></p>
+                    <label for="categoría">Categoría:</label>
+                    <input list="opcionesCategoría" name="categoría" id="categoría">
+                    <datalist id="opcionesCategoría">
+                        <option value="Alambre">Alambre</option>
+                        <option value="Dientes">Dientes</option>
+                        <option value="Empress">Empress</option>
+                        <option value="Ferula">Ferula</option>
+                        <option value="Metal Ceramica">Metal Ceramica</option>
+                        <option value="Metal">Metal</option>
+                        <option value="Resina">Resina</option>
+                        <option value="Revestimiento">Revestimiento</option>
+                        <option value="Ceramica Zirconio">Ceramica Zirconio</option>
+                    </datalist>
+                    <p>Establece el Stock inicial: <input type="number" name="stock" min="1" required></p>
+                    <p>Establece el Stock mínimo: <input type="number" name="stockMin" min="1" required></p>
+                    <p>Establece el Stock crítico: <input type="number" name="stockCrit" min="1" required></p>
+                </fieldset>
+                <input type="submit" value="Crear">
+            </form>
+        </div>
+        
+        <div class="mascota">
+            <footer>
+                <img src="../../images/mascota.png" alt="mascota.png" width="80" height="80"> 
+            </footer>
+        </div>
+    </body>
+</html>
