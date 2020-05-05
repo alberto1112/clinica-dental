@@ -1,24 +1,25 @@
 <?php
 
-    function estableceConexion(){
-        $serverName = "oci:dbname=localhost/XE;charset=UTF8";
-        $userName = "system";
-        $key="1234";
+function crearConexionBD()
+{
+	$host="oci:dbname=localhost/XE;charset=UTF8";
+	$usuario="CLINICA";
+	$password="DENTAL";
 
-        try{
-            $conexion = new PDO($serverName,$userName,$key,array(PDO::ATTR_PERSISTENT => true));
-            $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            if($conexion){
-                si;
-            }
-		    return $conexion;
-        }catch(PDOException $e){
-            $_SESSION["excepcion"] = $e->GetMessage();
-            header("Location: excepcion.php");
-        }
-    }
+	try{
+		/* Indicar que las sucesivas conexiones se puedan reutilizar */	
+		$conexion=new PDO($host,$usuario,$password,array(PDO::ATTR_PERSISTENT => true));
+	    /* Indicar que se disparen excepciones cuando ocurra un error*/
+    	$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		return $conexion;
+	}catch(PDOException $e){
+		$_SESSION['excepcion'] = $e->GetMessage();
+		header("Location: excepcion.php");
+	}
+}
 
-    function cierraConexion($conexion){
-        $conexion = null;
-    }
+function cerrarConexionBD($conexion){
+	$conexion=null;
+}
+
 ?>

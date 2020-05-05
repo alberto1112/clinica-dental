@@ -1,4 +1,8 @@
 <?php
+
+require_once '../gestionBD.php';
+require_once 'gestion-usuario.php';
+
 session_start();
 
 if(isset($_SESSION["formulario"])){
@@ -10,6 +14,7 @@ if(isset($_SESSION["formulario"])){
 	$nuevoUsuario["user"] = $_REQUEST["user"];
 	$nuevoUsuario["pass"] = $_REQUEST["pass"];
 	$nuevoUsuario["passConf"] = $_REQUEST["passConf"];
+
 }else{
 	Header("Location: form-register.php");
 }
@@ -28,7 +33,9 @@ if(isset($_SESSION["formulario"])){
 
 
 function validarDatosUsuario($nuevoUsuario){
-	
+
+	$errores = [];
+
 	if($nuevoUsuario["name"]==""){
 		$errores[]="<p>El nombre no puede estar vacío</p>";
 	}else if (!preg_match("/[a-z]+[A-z]+/", $nuevoUsuario["name"])){
@@ -54,6 +61,7 @@ function validarDatosUsuario($nuevoUsuario){
 	if($nuevoUsuario["passConf"]!=$nuevoUsuario["pass"]){
 		$errores[]="<p>La confirmación de la contraseña debe coincidir con la contraseña<p>";
 	}
+	
 	return $errores;
 }
 
