@@ -42,7 +42,7 @@
     	
  
         <div class="propiedades">
-            <form name="altaUsuario" action="validation-register.php" method="post" novalidate>
+            <form name="altaUsuario" action="validation-register.php" method="post" novalidate onsubmit="return validateForm()">
                 <fieldset>
                     <legend>Datos Personales</legend>
                     <!--<p>NIF: <input id="NIF" name="NIF" pattern="^[09]{8}[A-Z]" placeholder="12345678X" required></p>-->
@@ -58,7 +58,7 @@
                 <fieldset>
                     <legend>Nuevo Usuario</legend>
                     <p>Nombre de Usuario: <input id="user" name="user" type="text" value="<?php echo $formulario['user'];?>" placeholder="Nombre de Usuario" required></p>
-                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" required></p>
+                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" required onkeyup="passwordColor()"></p>
                     <p>Confirmar Contraseña: <input id="passConf" name="passConf" type="password" placeholder="Contraseña" required></p>              
                 </fieldset>
         </div> 
