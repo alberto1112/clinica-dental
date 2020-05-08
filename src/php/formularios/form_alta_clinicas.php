@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>  
 <html>
 <head>
-<style>
-.error {color: #FF0000;}
-</style>
+    <meta charset="UTF-8" lang="es">
+    <title>Alta clínicas</title>
+    <link rel="stylesheet", type="text/css", href="../../css/formClinicas.css">
 </head>
 <body>
 <?php 
@@ -69,45 +69,83 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     return $data;
   }
 ?>
-</body>
-<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-    <p><span class="error">* campo requerido</span></p>
-	<br>
-    Nombre: <input placeholder="Nombre" type="text" name="name" value="<?php echo $name;?>">
-    <span class="error"> <?php echo $nameErr;?></span>
-	<br>
-    Localización: <input placeholder="Localizacion" type="text" name="local" value="<?php echo $local;?>">
-    <span class="error"> <?php echo $localErr;?></span> 
-	<br>
-    Telefono de contacto:<input id="phone" name="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"> </input>
-    <span class="error"> <?php echo $phoneErr;?></span>
-	<br>
-    Moroso:
-    <input type="radio" name="moroso" <?php if (isset($moroso) && $moroso=="Si") echo "checked";?> value="Si">Sí
-    <input type="radio" name="moroso" <?php if (isset($moroso) && $moroso=="No") echo "checked";?> value="No">No
-    <span class="error">* <?php echo $morosoErr;?></span>
-    <br><br>
-    Nombre Dueño: <input placeholder="Nombre del dueño" type="text" name="nameD" value="<?php echo $nameD;?>">
-    <span class="error"> <?php echo $nameDErr;?></span>
-    <br>
-    Numero de colegiado:<input id="nCol" name="nCol" type="text" maxlength="4" placeholder="1234" value="<?php echo $nCol;?>"> </input>
-    <span class="error"> <?php echo $nColErr;?></span>
-    <br>
-    <input type="submit" name="submit">
-	<input type="submit" name="atrás">
 
-</form>
-<?php
-echo "<h2>Datos introducidos:</h2>";
-echo $name;
-echo "<br>";
-echo $local;
-echo "<br>";
-echo $phone;
-echo"<br>";
-echo $moroso;
-echo "<br>";
-echo $nameD;
-echo "<br>";
-echo $nCol;
-?>
+
+
+<img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%>
+    <div class="block">
+        <a href="#" class="acerca">Acerca de nosotros</a>
+        <!-- Estos bloques definen las id que se usan para el js de la hora -->
+        <div id="box">
+            <div id="box-date"></div>
+            <div id="box-time"></div>
+        </div>
+        
+        <img class="calendario" src="../../../images/calendario.png" width="1%" height="11%">
+        <img class="reloj" src="../../../images/reloj.png" width="1%" height="11%">
+        
+        <img class="usuario" src="../../../images/user.png" width="1.5%" height="13%">
+        
+        <img class="flechaA" src="../../../images/flechaA.png" width="20" height="20">
+        
+        <select class="botonUsuario">
+            <option value="1">Usuario</option>
+            <option value="2">Opcion 2</option>
+            <option value="3">Opcion 3</option>
+        </select>
+    </div>
+    <div class="bloque">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+          <p><span class="error"> &emsp;* campo requerido</span></p>
+      <p>
+        &emsp;
+        Nombre: &emsp; <input placeholder="Nombre" class = name type="text" name="name" value="<?php echo $name;?>">
+        <span class="error"> <?php echo $nameErr;?></span>
+      </p>
+        &emsp;
+        Localización: &emsp;<input placeholder="Localizacion" class=local type="text" name="local" value="<?php echo $local;?>">
+        <span class="error"> <?php echo $localErr;?></span> 
+      <p>
+       &emsp;
+      Telefono de contacto: &emsp;<input id="phone" class=phone name="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"> </input>
+      <span class="error"> <?php echo $phoneErr;?></span>
+      </p>
+      &emsp;
+      Moroso:
+        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="Si") echo "checked";?> value="Si">Sí
+        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="No") echo "checked";?> value="No">No
+        <span class="error">* <?php echo $morosoErr;?></span>
+      <br><p>
+      &emsp;
+      Nombre Dueño: &emsp;<input placeholder="Nombre del dueño" class = "nameD" type="text" name="nameD" value="<?php echo $nameD;?>">
+        <span class="error"> <?php echo $nameDErr;?></span>
+      </p>
+      &emsp;
+        Numero de colegiado:&emsp;<input id="nCol" class="nCol" name="nCol" type="text" maxlength="4" placeholder="1234" value="<?php echo $nCol;?>"> </input>
+        <span class="error"> <?php echo $nColErr;?></span>
+      <br>
+      <input type="submit" name="submit" value="Enviar" class="enviar">
+	    <input type="submit" name="atrás" value="Atrás" class="atrás">
+
+      </form>
+      <div class="results">
+        <?php
+          echo "<h2>Datos introducidos:</h2>";
+          echo $name;
+          echo "<br>";
+          echo $local;
+          echo "<br>";  
+          echo $phone;
+          echo"<br>";
+          echo $moroso;
+          echo "<br>";
+          echo $nameD;
+          echo "<br>";
+          echo $nCol;
+          ?>
+        </div>
+    </div>
+    <img src= "../../../images/elementoAdd.png" class="elementoAdd" width="10%" height="18%">
+    <script src="../../js/hora.js"></script>
+  
+</body>
