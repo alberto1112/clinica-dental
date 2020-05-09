@@ -62,12 +62,6 @@ INCREMENT BY 1
 START WITH 1
 MAXVALUE 9999;
 
---OID_T (trabajos)
-CREATE SEQUENCE SEC_Trabajos
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 9999;
-
 --Triggers asociados a secuencias
 --OID_C (Clinicas)
 CREATE OR REPLACE TRIGGER TR_SEC_Clinicas
@@ -186,18 +180,6 @@ DECLARE
 BEGIN
  SELECT SEC_REQUIERE.nextval INTO valorSec FROM DUAL;
 :NEW.OID_R := valorSec;
-END;
-/
-
---OID_T (trabajos)
-CREATE OR REPLACE TRIGGER TR_SEC_Trabajos
-BEFORE INSERT ON Trabajos
-FOR EACH ROW
-DECLARE
- valorSec NUMBER :=0;
-BEGIN
- SELECT SEC_TRABAJOS.nextval INTO valorSec FROM DUAL;
-:NEW.OID_T := valorSec;
 END;
 /
 

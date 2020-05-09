@@ -15,15 +15,15 @@ END;
 --insertar clinica
 CREATE OR REPLACE PROCEDURE crear_clinica (
     w_nombre IN Clinicas.nombre%TYPE,
-    w_localizaci�n IN Clinicas.localizaci�n%TYPE,
+    w_localización IN Clinicas.localización%TYPE,
     w_tlf_contacto IN Clinicas.tlf_contacto%TYPE,
     w_moroso IN Clinicas.moroso%TYPE,
-    w_nombre_due�o IN Clinicas.nombre_due�o%TYPE,
-    w_n�_colegiado IN Clinicas.n�_colegiado%TYPE
+    w_nombre_dueño IN Clinicas.nombre_dueño%TYPE,
+    w_num_colegiado IN Clinicas.num_colegiado%TYPE
 ) IS
 BEGIN
-INSERT INTO Clinicas (nombre,localizaci�n,tlf_contacto,moroso,nombre_due�o,n�_colegiado)
-VALUES (w_nombre,w_localizaci�n,w_tlf_contacto,w_moroso,w_nombre_due�o,w_n�_colegiado);
+INSERT INTO Clinicas (nombre,localización,tlf_contacto,moroso,nombre_dueño,num_colegiado)
+VALUES (w_nombre,w_localización,w_tlf_contacto,w_moroso,w_nombre_dueño,w_num_colegiado);
 COMMIT;
 END crear_clinica;
 /
@@ -40,19 +40,6 @@ INSERT INTO Pacientes (dni,fecha_nacimiento,e_sexo,oid_c)
 VALUES (w_dni,w_fecha_nacimiento,w_e_sexo,w_oid_c);
 COMMIT;
 END crear_paciente;
-/
-
---insertar trabajo
-CREATE OR REPLACE PROCEDURE crear_trabajo (
-    w_fecha_fin IN trabajos.fecha_fin%TYPE,
-    w_acciones IN trabajos.acciones%TYPE,
-    w_oid_e IN trabajos.oid_e%TYPE
-) IS
-BEGIN
-INSERT INTO Trabajos (fecha_fin,acciones,oid_e)
-VALUES (w_fecha_fin,w_acciones,w_oid_e);
-COMMIT;
-END crear_trabajo;
 /
 
 --insertar factura
@@ -74,12 +61,12 @@ CREATE OR REPLACE PROCEDURE crear_encargo (
     w_fecha_entrada IN encargos.fecha_entrada%TYPE,
     w_fecha_entrega IN encargos.fecha_entrega%TYPE,
     w_oid_pc IN encargos.oid_pc%TYPE,
-    w_oid_f IN encargos.oid_f%TYPE,
-    w_oid_c IN encargos.oid_c%TYPE
+    w_oid_f IN encargos.oid_f%TYPE
+    
 ) IS
 BEGIN 
-INSERT INTO Encargos (fecha_entrada,fecha_entrega,oid_pc,oid_f,oid_c)
-VALUES (w_fecha_entrada,w_fecha_entrega,w_oid_pc,w_oid_f,w_oid_c);
+INSERT INTO Encargos (fecha_entrada,fecha_entrega,oid_pc,oid_f)
+VALUES (w_fecha_entrada,w_fecha_entrega,w_oid_pc,w_oid_f);
 COMMIT;
 END crear_encargo;
 /
@@ -87,12 +74,12 @@ END crear_encargo;
 --insertar proveedor
 CREATE OR REPLACE PROCEDURE crear_proveedor (
     w_nombre IN proveedores.nombre%TYPE,
-    w_localizaci�n IN proveedores.localizaci�n%TYPE,
+    w_localización IN proveedores.localización%TYPE,
     w_tlf_contacto IN proveedores.tlf_contacto%TYPE
 ) IS
 BEGIN
-INSERT INTO Proveedores (nombre,localizaci�n,tlf_contacto)
-VALUES (w_nombre,w_localizaci�n,w_tlf_contacto);
+INSERT INTO Proveedores (nombre,localización,tlf_contacto)
+VALUES (w_nombre,w_localización,w_tlf_contacto);
 COMMIT;
 END crear_proveedor;
 /
@@ -188,16 +175,6 @@ COMMIT;
 END eliminar_paciente;
 /
 
---eliminar linea de la tabla trabajos
-CREATE OR REPLACE PROCEDURE eliminar_trabajo (
-    w_oid_t IN trabajos.oid_t%TYPE
-) IS 
-BEGIN
-DELETE FROM Trabajos WHERE oid_t = w_oid_t;
-COMMIT;
-END eliminar_trabajo;
-/
-
 --eliminar linea de la tabla facturas
 CREATE OR REPLACE PROCEDURE eliminar_factura (
     w_oid_f IN facturas.oid_f%TYPE
@@ -283,7 +260,7 @@ END eliminar_requiere;
 CREATE OR REPLACE PROCEDURE RN_03
 IS
     CURSOR C IS
-        Select OID_C from clinicas natural join encargos natural join facturas F where F.fecha_cobro is null and F.Fecha_vencimiento < SYSDATE ;
+        Select OID_C from clinicas natural join pacientes natural join encargos natural join facturas F where F.fecha_cobro is null and F.Fecha_vencimiento < SYSDATE ;
     w_moroso C%ROWTYPE;
 BEGIN
     OPEN C;
@@ -293,6 +270,7 @@ BEGIN
     END LOOP;
     CLOSE C;
 END;
+/
 
 --RN_01
 CREATE OR REPLACE PROCEDURE RN_01
@@ -302,9 +280,9 @@ IS
 BEGIN   
     OPEN C;
 	FETCH C INTO w_encargo;
-	DBMS_Output.put_line(RPAD('OID_E',10)||RPAD('Fecha_Entrada',20)||RPAD('Fecha_Entrega',17)||RPAD('OID_PC', 10)||RPAD('OID_F',10)||RPAD('OID_C', 10));
+	DBMS_Output.put_line(RPAD('OID_E',10)||RPAD('Fecha_Entrada',20)||RPAD('Fecha_Entrega',17)||RPAD('OID_PC', 10)||RPAD('OID_F',10));
 	WHILE C%Found LOOP DBMS_Output.put_line(RPAD(w_encargo.oid_e,10)
-    ||RPAD(w_encargo.fecha_entrada,20)||RPAD(w_encargo.fecha_entrega,17)||RPAD(w_encargo.oid_pc, 10)||RPAD(w_encargo.oid_f,10)||RPAD(w_encargo.oid_c,10));
+    ||RPAD(w_encargo.fecha_entrada,20)||RPAD(w_encargo.fecha_entrega,17)||RPAD(w_encargo.oid_pc, 10)||RPAD(w_encargo.oid_f,10));
 	FETCH C INTO w_encargo;
     END LOOP;
 	Close C;
@@ -316,7 +294,7 @@ CREATE OR REPLACE PROCEDURE Modifica_material(
     w_oid_m IN materiales.oid_m%TYPE,
     w_stock IN materiales.stock%TYPE,
     w_stock_min IN materiales.stock_min%TYPE,
-    w_stock_critico IN materiales.stock_critico%TYPE,
+    w_stock_critico IN materiales.stock_critico%TYPE
 )IS
 BEGIN
     UPDATE Materiales SET stock=w_stock WHERE oid_m=w_oid_m;

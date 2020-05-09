@@ -3,14 +3,14 @@ SET SERVEROUTPUT ON;
 BEGIN
     --PRUEBAS CLINICAS
     PRUEBAS_CLINICAS.INICIALIZAR;
-    PRUEBAS_CLINICAS.INSERTAR('Prueba 1 - Insertar clínica', 'Septem', true);
-    PRUEBAS_CLINICAS.ACTUALIZAR('Prueba 2 - Actualización clínica', SEC_CLINICAS.currval, 'Fátima', true);
-    PRUEBAS_CLINICAS.ELIMINAR('Prueba 3 - Eliminar clínica', SEC_CLINICAS.currval, true);
+    PRUEBAS_CLINICAS.INSERTAR('Prueba 1 - Insertar clï¿½nica', 'Septem', true);
+    PRUEBAS_CLINICAS.ACTUALIZAR('Prueba 2 - Actualizaciï¿½n clï¿½nica', SEC_CLINICAS.currval, 'Fï¿½tima', true);
+    PRUEBAS_CLINICAS.ELIMINAR('Prueba 3 - Eliminar clï¿½nica', SEC_CLINICAS.currval, true);
     
     --PRUEBAS PACIENTES
     PRUEBAS_PACIENTES.INICIALIZAR;
     PRUEBAS_PACIENTES.INSERTAR('Prueba 1 - Insertar paciente', '45180567C', true);
-    PRUEBAS_PACIENTES.ACTUALIZAR('Prueba 2 - Actualización paciente', SEC_PACIENTES.currval, '45789456A', true);
+    PRUEBAS_PACIENTES.ACTUALIZAR('Prueba 2 - Actualizaciï¿½n paciente', SEC_PACIENTES.currval, '45789456A', true);
     PRUEBAS_PACIENTES.ELIMINAR('Prueba 3 - Eliminar paciente', SEC_PACIENTES.currval, true);
     
     --PRUEBAS FACTURAS
@@ -24,12 +24,6 @@ BEGIN
     PRUEBAS_ENCARGOS.INSERTAR('Prueba 1 - Insertar encargo', '10/01/2020', true);
     PRUEBAS_ENCARGOS.ACTUALIZAR('Prueba 2 - Actualizar encargo', SEC_ENCARGOS.currval, '09/01/2020', true);
     PRUEBAS_ENCARGOS.ELIMINAR('Prueba 3 - Eliminar encargo', SEC_ENCARGOS.currval, true);
-    
-    --PRUEBAS TRABAJOS
-    PRUEBAS_TRABAJOS.INICIALIZAR;
-    PRUEBAS_TRABAJOS.INSERTAR('Prueba 1 - Insertar trabajo', '02/03/2020', false);
-    PRUEBAS_TRABAJOS.ACTUALIZAR('Prueba 2 - Actualizar trabajo', SEC_TRABAJOS.currval, '17/04/2020', false);
-    PRUEBAS_TRABAJOS.ELIMINAR('Prueba 3 - Eliminar trabajo', SEC_TRABAJOS.currval, true);
     
     --PRUEBAS PROVEEDORES
     PRUEBAS_PROVEEDORES.INICIALIZAR;
@@ -51,9 +45,9 @@ BEGIN
     
     --PRUEBAS LINEAS PEDIDO
     PRUEBAS_LINEAS.INICIALIZAR;
-    PRUEBAS_LINEAS.INSERTAR('Prueba 1 - Insertar línea', 5, true);
-    PRUEBAS_LINEAS.ACTUALIZAR('Prueba 2 - Actualizar línea', SEC_LINEA_PEDIDO.currval, 6, true);
-    PRUEBAS_LINEAS.ELIMINAR('Prueba 3 - Eliminar línea', SEC_LINEA_PEDIDO.currval, true);
+    PRUEBAS_LINEAS.INSERTAR('Prueba 1 - Insertar lï¿½nea', 5, true);
+    PRUEBAS_LINEAS.ACTUALIZAR('Prueba 2 - Actualizar lï¿½nea', SEC_LINEA_PEDIDO.currval, 6, true);
+    PRUEBAS_LINEAS.ELIMINAR('Prueba 3 - Eliminar lï¿½nea', SEC_LINEA_PEDIDO.currval, true);
     
     --PRUEBAS PRODUCTOS
     PRUEBAS_PRODUCTOS.INICIALIZAR;
