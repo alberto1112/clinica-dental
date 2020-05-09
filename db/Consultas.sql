@@ -32,10 +32,10 @@ IS
 BEGIN
 	OPEN C;
 	FETCH C INTO w_Clinica;
-	DBMS_Output.put_line(RPAD('OID_C',10)||RPAD('nombre', 30)||RPAD('localización',40)||RPAD('Tlf_Contacto', 9)||RPAD('Moroso', 1)
-    ||RPAD('Nombre_Dueño', 15)||RPAD('Nº_Colegiado', 4));
-	WHILE C%Found LOOP Dbms_output.put_line(RPAD(w_Clinica.OID_C,10)||RPAD(w_Clinica.nombre, 30)||RPAD(w_clinica.localización,40)
-    ||RPAD(w_clinica.Tlf_Contacto, 9)||RPAD(w_clinica.Moroso, 1)||RPAD(w_clinica.Nombre_Dueño, 15)||RPAD(w_clinica.Nº_Colegiado, 4));
+	DBMS_Output.put_line(RPAD('OID_C',10)||RPAD('nombre', 30)||RPAD('localizaciï¿½n',40)||RPAD('Tlf_Contacto', 9)||RPAD('Moroso', 1)
+    ||RPAD('Nombre_Dueï¿½o', 15)||RPAD('Nï¿½_Colegiado', 4));
+	WHILE C%Found LOOP Dbms_output.put_line(RPAD(w_Clinica.OID_C,10)||RPAD(w_Clinica.nombre, 30)||RPAD(w_clinica.localizaciï¿½n,40)
+    ||RPAD(w_clinica.Tlf_Contacto, 9)||RPAD(w_clinica.Moroso, 1)||RPAD(w_clinica.Nombre_Dueï¿½o, 15)||RPAD(w_clinica.Nï¿½_Colegiado, 4));
 	FETCH C INTO w_Clinica;
 	END LOOP;
 	CLOSE C;
@@ -57,40 +57,6 @@ Begin
     ||RPAD(w_paciente.E_sexo,10)||RPAD(w_paciente.OID_C,10));
 	Fetch C into w_paciente;
 	End loop;
-	Close C;
-End;
-/
-
---RF-02-02 Consultas sobre trabajos (listar trabajos)
-CREATE OR REPLACE PROCEDURE PR_trabajos
-IS
-	CURSOR C IS
-		Select * from trabajos order by OID_T;
-	w_trabajo C%ROWTYPE;
-Begin
-	Open C;
-	Fetch C into w_trabajo;
-	DBMS_Output.put_line(RPAD('OID_T',10)||RPAD('Fecha_Fin',15)||RPAD('Acciones',50));
-	While C%Found Loop DBMS_Output.put_line(RPAD(w_trabajo.OID_T,10)||RPAD(w_trabajo.Fecha_Fin,15)||RPAD(w_trabajo.Acciones,50));
-	Fetch C into w_trabajo;
-	End Loop;
-	Close C;
-End;
-/
-
---RF-02-03 Consultas sobre trabajos acabados (listar trabajos acabados)
-Create or replace procedure PR_trabajos_acabados
-is
-	cursor C is
-		Select * from trabajos where Fecha_fin is not null order by OID_T;
-	w_trabajo C%ROWTYPE;
-Begin
-	Open C;
-	Fetch C into w_trabajo;
-	DBMS_Output.put_line(RPAD('OID_T',10)||RPAD('Fecha_Fin',15)||RPAD('Acciones',50));
-	While C%Found Loop DBMS_Output.put_line(RPAD(w_trabajo.OID_T,10)||RPAD(w_trabajo.Fecha_Fin,15)||RPAD(w_trabajo.Acciones,50));
-	Fetch C into w_trabajo;
-	End Loop;
 	Close C;
 End;
 /
@@ -176,9 +142,9 @@ is
 Begin
 	Open C;
 	Fetch C into w_encargo;
-	DBMS_Output.put_line(RPAD('OID_E',10)||RPAD('FECHA_ENTRADA',20)||RPAD('FECHA_ENTREGA',20)||RPAD('OID_PC',10)||RPAD('OID_F',10)||RPAD('OID_C',10));
+	DBMS_Output.put_line(RPAD('OID_E',10)||RPAD('FECHA_ENTRADA',20)||RPAD('FECHA_ENTREGA',20)||RPAD('Acciones',50))||RPAD('OID_PC',10)||RPAD('OID_F',10)||RPAD('OID_C',10));
 	While C%Found Loop DBMS_Output.put_line(RPAD(w_encargo.OID_E,10)||RPAD(w_encargo.FECHA_ENTRADA,20)||RPAD(w_encargo.FECHA_ENTREGA,20)
-    ||RPAD(w_encargo.OID_PC,10)||RPAD(w_encargo.OID_F,10)||RPAD(w_encargo.OID_C,10));
+    ||RPAD(w_trabajo.Acciones,50))||RPAD(w_encargo.OID_PC,10)||RPAD(w_encargo.OID_F,10)||RPAD(w_encargo.OID_C,10));
 	Fetch C into w_encargo;
 	End Loop;
 	Close C;
@@ -307,9 +273,9 @@ is
 Begin
 	Open C;
 	Fetch c into w_proveedor;
-	DBMS_Output.put_line(RPAD('OID_PR',10)||RPAD('NOMBRE',30)||RPAD('LOCALIZACIÓN',30)||RPAD('TLF_CONTACTO',20));
+	DBMS_Output.put_line(RPAD('OID_PR',10)||RPAD('NOMBRE',30)||RPAD('LOCALIZACIï¿½N',30)||RPAD('TLF_CONTACTO',20));
 	While C%Found Loop DBMS_Output.put_line(RPAD(w_proveedor.OID_PR,10)||RPAD(w_proveedor.NOMBRE,30)
-    ||RPAD(w_proveedor.LOCALIZACIÓN,30)||RPAD(w_proveedor.TLF_CONTACTO,20));
+    ||RPAD(w_proveedor.LOCALIZACIï¿½N,30)||RPAD(w_proveedor.TLF_CONTACTO,20));
 	Fetch c into w_proveedor;
 	End Loop;
 	Close C;

@@ -12,25 +12,10 @@ BEGIN
     IF :NEW.stock < :OLD.stock_min OR :NEW.stock < :OLD.stock_critico 
     THEN
         IF :NEW.stock < :OLD.stock_critico
-        THEN DBMS_OUTPUT.PUT_LINE('EL STOCK ESTÁ POR DEBAJO DEL STOCK CRÍTICO.');
+        THEN DBMS_OUTPUT.PUT_LINE('EL STOCK ESTï¿½ POR DEBAJO DEL STOCK CRï¿½TICO.');
         ELSIF :NEW.stock < :OLD.stock_min
-        THEN DBMS_OUTPUT.PUT_LINE('EL STOCK ESTÁ POR DEBAJO DEL STOCK MÍNIMO.');
+        THEN DBMS_OUTPUT.PUT_LINE('EL STOCK ESTï¿½ POR DEBAJO DEL STOCK Mï¿½NIMO.');
         END IF;
-    END IF;
-END;
-/
-
---RN_04
-CREATE OR REPLACE TRIGGER RN_04
-    BEFORE INSERT OR UPDATE OF fecha_fin ON trabajos
-    FOR EACH ROW
-    DECLARE
-    fecha DATE;
-BEGIN
-    SELECT fecha_entrega INTO fecha FROM encargos WHERE  oid_e = :NEW.oid_e;
-    IF :NEW.fecha_fin > fecha
-    THEN raise_application_error
-    (-20600,'La fecha de fin de trabajo debe ser anterior a la fecha de entrega del encargo.');
     END IF;
 END;
 /

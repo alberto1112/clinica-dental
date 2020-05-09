@@ -62,12 +62,6 @@ INCREMENT BY 1
 START WITH 1
 MAXVALUE 9999;
 
---OID_T (trabajos)
-CREATE SEQUENCE SEC_Trabajos
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 9999;
-
 --Triggers asociados a secuencias
 --OID_C (Clinicas)
 CREATE OR REPLACE TRIGGER TR_SEC_Clinicas

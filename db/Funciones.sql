@@ -188,16 +188,6 @@ COMMIT;
 END eliminar_paciente;
 /
 
---eliminar linea de la tabla trabajos
-CREATE OR REPLACE PROCEDURE eliminar_trabajo (
-    w_oid_t IN trabajos.oid_t%TYPE
-) IS 
-BEGIN
-DELETE FROM Trabajos WHERE oid_t = w_oid_t;
-COMMIT;
-END eliminar_trabajo;
-/
-
 --eliminar linea de la tabla facturas
 CREATE OR REPLACE PROCEDURE eliminar_factura (
     w_oid_f IN facturas.oid_f%TYPE

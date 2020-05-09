@@ -12,7 +12,7 @@ drop table Pedidos CASCADE CONSTRAINTS;
 drop table Linea_Pedido;
 DROP TABLE USUARIOS;
 
--- Creación de tablas
+-- Creaciï¿½n de tablas
 CREATE TABLE USUARIOS (
 	NOMBRE VARCHAR2(25) NOT NULL,
 	APELLIDOS VARCHAR2(75),
@@ -26,11 +26,11 @@ CREATE TABLE USUARIOS (
 CREATE TABLE Clinicas(
     OID_C NUMBER NOT NULL,
     Nombre varchar2(30),
-    Localización varchar2(40),
+    Localizaciï¿½n varchar2(40),
     Tlf_Contacto varchar2(9),
     Moroso char(1) check(Moroso in('S','N')),
-    Nombre_Dueño varchar2(15),
-    Nº_Colegiado varchar2(4),
+    Nombre_Dueï¿½o varchar2(15),
+    Nï¿½_Colegiado varchar2(4),
     PRIMARY KEY(OID_C)
 );
 
@@ -60,6 +60,7 @@ CREATE TABLE Encargos(
     OID_E NUMBER NOT NULL,
     Fecha_Entrada date default SYSDATE,
     Fecha_Entrega date,
+    Acciones varchar(50),
     OID_PC NUMBER,
     OID_F NUMBER,
     OID_C NUMBER,
@@ -69,21 +70,11 @@ CREATE TABLE Encargos(
     FOREIGN KEY (OID_C) REFERENCES Clinicas ON DELETE SET NULL
 );
 
---trabajos
-CREATE TABLE Trabajos(
-    OID_T NUMBER NOT NULL,
-    Fecha_Fin date,
-    Acciones varchar(50),
-    OID_E NUMBER NOT NULL,
-    PRIMARY KEY (OID_T),
-    FOREIGN KEY (OID_E) REFERENCES Encargos ON DELETE CASCADE
-);
-
 --proveedores
 CREATE TABLE Proveedores(
     OID_PR NUMBER NOT NULL,
     Nombre varchar(30) NOT NULL UNIQUE,
-    Localización varchar(30),
+    Localizaciï¿½n varchar(30),
     Tlf_Contacto varchar(9),
     PRIMARY KEY (OID_PR)
 );
