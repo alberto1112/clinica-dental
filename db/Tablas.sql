@@ -26,11 +26,11 @@ CREATE TABLE USUARIOS (
 CREATE TABLE Clinicas(
     OID_C NUMBER NOT NULL,
     Nombre varchar2(30),
-    Localizaci�n varchar2(40),
+    Localización varchar2(40),
     Tlf_Contacto varchar2(9),
     Moroso char(1) check(Moroso in('S','N')),
-    Nombre_Due�o varchar2(15),
-    N�_Colegiado varchar2(4),
+    Nombre_Dueño varchar2(15),
+    Num_Colegiado varchar2(4),
     PRIMARY KEY(OID_C)
 );
 
@@ -63,18 +63,16 @@ CREATE TABLE Encargos(
     Acciones varchar(50),
     OID_PC NUMBER,
     OID_F NUMBER,
-    OID_C NUMBER,
     PRIMARY KEY (OID_E),
     FOREIGN KEY (OID_PC) REFERENCES Pacientes ON DELETE SET NULL,
-    FOREIGN KEY (OID_F) REFERENCES Facturas ON DELETE SET NULL,
-    FOREIGN KEY (OID_C) REFERENCES Clinicas ON DELETE SET NULL
+    FOREIGN KEY (OID_F) REFERENCES Facturas ON DELETE SET NULL
 );
 
 --proveedores
 CREATE TABLE Proveedores(
     OID_PR NUMBER NOT NULL,
     Nombre varchar(30) NOT NULL UNIQUE,
-    Localizaci�n varchar(30),
+    Localización varchar(30),
     Tlf_Contacto varchar(9),
     PRIMARY KEY (OID_PR)
 );
