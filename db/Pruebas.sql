@@ -3,14 +3,14 @@ SET SERVEROUTPUT ON;
 BEGIN
     --PRUEBAS CLINICAS
     PRUEBAS_CLINICAS.INICIALIZAR;
-    PRUEBAS_CLINICAS.INSERTAR('Prueba 1 - Insertar cl�nica', 'Septem', true);
-    PRUEBAS_CLINICAS.ACTUALIZAR('Prueba 2 - Actualizaci�n cl�nica', SEC_CLINICAS.currval, 'F�tima', true);
+    PRUEBAS_CLINICAS.INSERTAR('Prueba 1 - Insertar clínica', 'Septem', true);
+    PRUEBAS_CLINICAS.ACTUALIZAR('Prueba 2 - Actualización cl�nica', SEC_CLINICAS.currval, 'F�tima', true);
     PRUEBAS_CLINICAS.ELIMINAR('Prueba 3 - Eliminar cl�nica', SEC_CLINICAS.currval, true);
     
     --PRUEBAS PACIENTES
     PRUEBAS_PACIENTES.INICIALIZAR;
     PRUEBAS_PACIENTES.INSERTAR('Prueba 1 - Insertar paciente', '45180567C', true);
-    PRUEBAS_PACIENTES.ACTUALIZAR('Prueba 2 - Actualizaci�n paciente', SEC_PACIENTES.currval, '45789456A', true);
+    PRUEBAS_PACIENTES.ACTUALIZAR('Prueba 2 - Actualización paciente', SEC_PACIENTES.currval, '45789456A', true);
     PRUEBAS_PACIENTES.ELIMINAR('Prueba 3 - Eliminar paciente', SEC_PACIENTES.currval, true);
     
     --PRUEBAS FACTURAS
@@ -45,9 +45,9 @@ BEGIN
     
     --PRUEBAS LINEAS PEDIDO
     PRUEBAS_LINEAS.INICIALIZAR;
-    PRUEBAS_LINEAS.INSERTAR('Prueba 1 - Insertar l�nea', 5, true);
+    PRUEBAS_LINEAS.INSERTAR('Prueba 1 - Insertar línea', 5, true);
     PRUEBAS_LINEAS.ACTUALIZAR('Prueba 2 - Actualizar l�nea', SEC_LINEA_PEDIDO.currval, 6, true);
-    PRUEBAS_LINEAS.ELIMINAR('Prueba 3 - Eliminar l�nea', SEC_LINEA_PEDIDO.currval, true);
+    PRUEBAS_LINEAS.ELIMINAR('Prueba 3 - Eliminar línea', SEC_LINEA_PEDIDO.currval, true);
     
     --PRUEBAS PRODUCTOS
     PRUEBAS_PRODUCTOS.INICIALIZAR;

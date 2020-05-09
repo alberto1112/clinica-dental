@@ -1,7 +1,6 @@
 -- Borrado de tablas
 drop table Clinicas CASCADE CONSTRAINTS;
 drop table Pacientes CASCADE CONSTRAINTS;
-drop table Trabajos CASCADE CONSTRAINTS;
 drop table Facturas CASCADE CONSTRAINTS;
 drop table Encargos CASCADE CONSTRAINTS;
 drop table Materiales CASCADE CONSTRAINTS;
