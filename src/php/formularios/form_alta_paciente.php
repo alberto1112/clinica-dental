@@ -4,6 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta paciente</title>
     <link rel="stylesheet", type="text/css", href="../../css/formPaciente.css">
+    <script src="../../js/validacion_cliente_alta_paciente.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -67,12 +68,14 @@ function test_input($data) {
         <p><span class="error">&emsp;* campo requerido</span></p>
       <p>
       &emsp;
-        DNI*:&emsp; <input  required placeholder="DNI" maxlength="9" type="text" name="dni" value="<?php echo $dni;?>">
-        <span class="error"> <?php echo $dniErr;?></span>
+        DNI*:&emsp; <input  required placeholder="DNI" maxlength="9" type="text" id="dni" name="dni" value="<?php echo $dni;?>"
+                            onkeyup="document.getElementById('errorDni').innerHTML = dniValidate(document.getElementById('dni').value);">
+        <span id="errorDni" class="error"> <?php echo $dniErr;?></span>
       </p>
       &emsp;
-        Fecha de Nacimiento:&emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaNacimiento" value="<?php echo $fechaNacimiento;?>">
-        <span class="error"> <?php echo $fechaNacimientoErr;?></span>
+        Fecha de Nacimiento*:&emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaNacimiento" required id="fechaNacimiento" value="<?php echo $fechaNacimiento;?>" 
+          oninput="document.getElementById('errorFechaNac').innerHTML = dateValidation(document.getElementById('fechaNacimiento').value);">
+        <span id="errorFechaNac" class="error"> <?php echo $fechaNacimientoErr;?></span>
       <p>
       &emsp;
         Sexo:

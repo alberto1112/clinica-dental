@@ -4,6 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta facturas</title>
     <link rel="stylesheet", type="text/css", href="../../css/formFacturas.css">
+    <script src="../../js/validacion_cliente_alta_factura.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -74,20 +75,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
           &emsp;
-          Fecha de cobro: <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaCobro" value="<?php echo $fechaCobro;?>">
+          Fecha de cobro: <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaCobro" id="fechaCobro" value="<?php echo $fechaCobro;?>">
           <span class="error"> <?php echo $fechaCobroErr;?></span>
         </p>
           &emsp;
-          Fecha de vencimiento: <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaVencimiento" value="<?php echo $fechaVencimiento;?>">
+          Fecha de vencimiento: <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaVencimiento" id="fechaVencimiento" value="<?php echo $fechaVencimiento;?>">
           <span class="error"> <?php echo $fechaVencimientoErr;?></span>
         <p>
           &emsp;
-          Fecha de factura: <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaFactura" value="<?php echo $fechaFactura;?>">
-          <span class="error"> <?php echo $fechaFacturaErr;?></span>
+          Fecha de factura: <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaFactura" id="fechaFactura" value="<?php echo $fechaFactura;?>"
+                                    oninput="document.getElementById('errorFecha').innerHTML = dateValidation(
+                                      document.getElementById('fechaCobro').value,
+                                      document.getElementById('fechaVencimiento').value,
+                                      document.getElementById('fechaFactura').value);">
+          <span id="errorFecha" class="error"> <?php echo $fechaFacturaErr;?></span>
         </p>
           &emsp;
-          Precio total: <input placeholder="Precio total" type="text" name="precioTotal" value="<?php echo $precioTotal;?>">
-          <span class="error"> <?php echo $precioTotalErr;?></span> 
+          Precio total: <input placeholder="Precio total" type="text" id="precioTotal" name="precioTotal" value="<?php echo $precioTotal;?>"
+                                onkeyup="document.getElementById('errorPrecio').innerHTML = priceValidation(document.getElementById('precioTotal').value)">
+          <span id="errorPrecio" class="error"> <?php echo $precioTotalErr;?></span> 
         <br>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
 	    <input type="submit" name="atrás" value="Atrás" class="atrás">

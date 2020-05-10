@@ -4,6 +4,7 @@
 <meta charset="UTF-8" lang="es">
     <title>Alta Encargos</title>
     <link rel="stylesheet", type="text/css", href="../../css/formEncargo.css">
+    <script src="../../js/validacion_cliente_alta_encargo.js" type="text/javascript"></script>
 </head>
 <body>  
 <?php
@@ -55,16 +56,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     
     <div class="bloque">    
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+      <form id="formEncargo" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
           <p><span class="error">&emsp;* campo requerido</span></p>
           <p>
           &emsp;
-          Fecha de entrada: <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaEntrada" value="<?php echo $fechaEntrada;?>">
+          Fecha de entrada: <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaEntrada" id="fechaEntrada" value="<?php echo $fechaEntrada;?>">
           <span class="error"> <?php echo $fechaEntradaErr;?></span>
           </p>
           &emsp;
-          Fecha de entrega: <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaEntrega" value="<?php echo $fechaEntrega;?>">
-          <span class="error"> <?php echo $fechaEntregaErr;?></span> 
+          Fecha de entrega: <input placeholder="dd/mm/yyyy" maxlength="10" type="date" name="fechaEntrega" id="fechaEntrega" value="<?php echo $fechaEntrega;?>" 
+              oninput="document.getElementById('entregaError').innerHTML = dateValidation(document.getElementById('fechaEntrada').value,document.getElementById('fechaEntrega').value);">
+          <span id="entregaError" class="error"> <?php echo $fechaEntregaErr;?></span> 
           <p>         
           <input type="submit" name="submit" value="Enviar" class="enviar">
 	    <input type="submit" name="atrás" value="Atrás" class="atrás">

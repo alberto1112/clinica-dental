@@ -4,6 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta clínicas</title>
     <link rel="stylesheet", type="text/css", href="../../css/formClinicas.css">
+    <script src="../../js/validacion_cliente_alta_clinica.js" type="text/javascript"></script>
 </head>
 <body>
 <?php 
@@ -99,30 +100,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error"> &emsp;* campo requerido</span></p>
       <p>
         &emsp;
-        Nombre: &emsp; <input placeholder="Nombre" class = name type="text" name="name" value="<?php echo $name;?>">
-        <span class="error"> <?php echo $nameErr;?></span>
+        Nombre: &emsp; <input placeholder="Nombre" class=name type="text" name="name" id="name" value="<?php echo $name;?>"
+                              onkeyup="document.getElementById('errorName').innerHTML = lettersValidation(document.getElementById('name').value);">
+        <span id="errorName" class="error"> <?php echo $nameErr;?></span>
       </p>
         &emsp;
-        Localización: &emsp;<input placeholder="Localizacion" class=local type="text" name="local" value="<?php echo $local;?>">
-        <span class="error"> <?php echo $localErr;?></span> 
+        Localización: &emsp;<input placeholder="Localizacion" class=local type="text" name="local" id="local" value="<?php echo $local;?>"
+                                  onkeyup="document.getElementById('errorLocal').innerHTML = lettersValidation(document.getElementById('local').value);">
+        <span id="errorLocal" class="error"> <?php echo $localErr;?></span> 
       <p>
        &emsp;
-      Telefono de contacto: &emsp;<input id="phone" class=phone name="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"> </input>
-      <span class="error"> <?php echo $phoneErr;?></span>
+      Telefono de contacto: &emsp;<input id="phone" class=phone name="phone" id="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"
+                                         onkeyup="document.getElementById('errorNum').innerHTML = numberValidation(document.getElementById('phone').value);">
+      <span id="errorNum" class="error"> <?php echo $phoneErr;?></span>
       </p>
       &emsp;
       Moroso:
-        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="Si") echo "checked";?> value="Si">Sí
-        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="No") echo "checked";?> value="No">No
+        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="Si") echo "checked";?> value="Si" required>Sí
+        <input type="radio" name="moroso" class = moroso<?php if (isset($moroso) && $moroso=="No") echo "checked";?> value="No" >No
         <span class="error">* <?php echo $morosoErr;?></span>
       <br><p>
       &emsp;
-      Nombre Dueño: &emsp;<input placeholder="Nombre del dueño" class = "nameD" type="text" name="nameD" value="<?php echo $nameD;?>">
-        <span class="error"> <?php echo $nameDErr;?></span>
+      Nombre Dueño: &emsp;<input placeholder="Nombre del dueño" class="nameD" type="text" id="nameD" name="nameD" value="<?php echo $nameD;?>"
+                                onkeyup="document.getElementById('errorNameD').innerHTML = lettersValidation(document.getElementById('nameD').value);">
+        <span id="errorNameD" class="error"> <?php echo $nameDErr;?></span>
       </p>
       &emsp;
-        Numero de colegiado:&emsp;<input id="nCol" class="nCol" name="nCol" type="text" maxlength="4" placeholder="1234" value="<?php echo $nCol;?>"> </input>
-        <span class="error"> <?php echo $nColErr;?></span>
+        Numero de colegiado:&emsp;<input id="nCol" class="nCol" name="nCol" id="nCol" type="text" maxlength="4" placeholder="1234" value="<?php echo $nCol;?>"
+                                      onkeyup="document.getElementById('errorNumCol').innerHTML = nColValidation(document.getElementById('nCol').value);">
+        <span id="errorNumCol" class="error"> <?php echo $nColErr;?></span>
       <br>
       <input type="submit" name="submit" value="Enviar" class="enviar">
 	    <input type="submit" name="atrás" value="Atrás" class="atrás">
