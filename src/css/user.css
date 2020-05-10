@@ -14,33 +14,39 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    max-width: 100%;
     
 }
 .imagen{
     position: absolute;
     z-index: 1;
     left:3%;
-    display: flex;
+    max-width: 100%;
+    height: auto;
     
 }
 .calendario{
     position: absolute;
     left: 80.5%;
-    top: 50%;
-    display: flex;
+    top: 14%;
+    max-width: 100%;
+    height: auto;
 
 }
 .reloj{
     position: absolute;
-    left: 96%;
+    left: 94%;
     top:16%;
-    display: flex;
+    max-width: 100%;
+    height: auto;
 }
 .usuario{
     position: absolute;
     left: 85%;
     top:48%;
-    display: flex;
+    max-width: 100%;
+    height: auto;
+    
 }
 .flechaA{
     position: absolute;
@@ -48,45 +54,57 @@ body{
     top:8%;
     cursor: pointer;
     visibility: hidden;
-    display: flex;
+    
 }
 .botonUsuario{
     background:    #ffffff;
     border:        1% solid #2b86da;
     border-radius: 1%;
     padding:       0.5% 2%;
-    font:          normal bold 19px/1 "Open Sans", sans-serif;
+    font:          normal bold 0.8vw/1 "Open Sans", sans-serif;
     text-align:    right;
     text-decoration: none;
     position: absolute;
     left: 87.5%;
     top: 43%;
+    max-width: 100%;
+    height: auto;
 }
 .acerca{
     color: turquoise;
     font-family: sans-serif;
     font-weight: bold;
+    font-size: 0.8vw;
     position: absolute;
-    left: 72%;
+    left: 74%;
     top: 50%;
     text-decoration: none;
+    max-width: 100%;
+    height: auto;
 }
 #box {
     font-family: 'Arial', sans-serif;
-    font-weight: 700;
-    position: fixed;
+    position: absolute;
+    font-weight: bold;
+    font-size: 0.8vw;
     left: 75%;
-    top:3%
+    top:14%;
+    max-width: 100%;
+    height: auto;
   }
 
 #box-date {
     margin: 4% 0;
     display: block;
+    max-width: 100%;
+    height: auto;
   }
   
 #box-date span {
     color: #848d95;
     font-size: 80%;
+    max-width: 100%;
+    height: auto;
   
 }
   
@@ -97,11 +115,13 @@ body{
     position: fixed;
     left: 88%;
     top: 3%;
+    max-width: 100%;
+    height: auto;
   }
   
 span.hm-time, span.s-time {
-    padding: 6px 5px;
-    border-radius: 3px;
+    padding: 8% 7%;
+    border-radius: 1%;
   }
   
   /* Aquí se cambia el color de fondo de las horas y los minutos */
@@ -116,7 +136,7 @@ span.s-time {
   }
   
 span.f-time {
-    font-size: 13px;
+    font-size: 0.8vw;
   }
 .bloque{
     position: absolute;

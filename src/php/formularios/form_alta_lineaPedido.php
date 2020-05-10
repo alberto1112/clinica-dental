@@ -38,9 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
 ?>
 
-<img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%>
+<a href="../../html/log.html" ><img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%></a>
     <div class="block">
-        <a href="#" class="acerca">Acerca de nosotros</a>
+        <a href="../../html/about-us.html" class="acerca">Acerca de nosotros</a>
         <!-- Estos bloques definen las id que se usan para el js de la hora -->
         <div id="box">
             <div id="box-date"></div>
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="error"> <?php echo $costeErr;?></span> 
         <p></p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
-	    <input type="submit" name="atrás" value="Atrás" class="atrás">
+	      <input type="submit" name="atrás" value="Atrás" class="atrás">
       </form>
       <div class="results">
         <?php
@@ -87,5 +87,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
       </div>
       <img src= "../../../images/elementoAdd.png" class="elementoAdd" width="10%" height="18%">
-    <script src="../../js/hora.js"></script>
+      <script src="../../js/hora.js"></script>
       </body>
