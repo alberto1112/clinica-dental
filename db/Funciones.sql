@@ -60,13 +60,14 @@ END crear_factura;
 CREATE OR REPLACE PROCEDURE crear_encargo (
     w_fecha_entrada IN encargos.fecha_entrada%TYPE,
     w_fecha_entrega IN encargos.fecha_entrega%TYPE,
+    w_acciones IN encargos.w_Acciones%TYPE,
     w_oid_pc IN encargos.oid_pc%TYPE,
     w_oid_f IN encargos.oid_f%TYPE
     
 ) IS
 BEGIN 
-INSERT INTO Encargos (fecha_entrada,fecha_entrega,oid_pc,oid_f)
-VALUES (w_fecha_entrada,w_fecha_entrega,w_oid_pc,w_oid_f);
+INSERT INTO Encargos (fecha_entrada,fecha_entrega,acciones,oid_pc,oid_f)
+VALUES (w_fecha_entrada,w_fecha_entrega,w_accaiones,w_oid_pc,w_oid_f);
 COMMIT;
 END crear_encargo;
 /
@@ -98,7 +99,7 @@ COMMIT;
 END crear_pedido;
 /
 
---insertar materia
+--insertar material
 CREATE OR REPLACE PROCEDURE crear_material (
     w_nombre IN materiales.nombre%TYPE,
     w_categoria IN materiales.categoria%TYPE,
