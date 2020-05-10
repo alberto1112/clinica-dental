@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           }
     ?>
 
-<img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%>
+<a href="../../html/log.html" ><img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%></a>
     <div class="block">
-        <a href="#" class="acerca">Acerca de nosotros</a>
+        <a href="../../html/about-us.html" class="acerca">Acerca de nosotros</a>
         <!-- Estos bloques definen las id que se usan para el js de la hora -->
         <div id="box">
             <div id="box-date"></div>

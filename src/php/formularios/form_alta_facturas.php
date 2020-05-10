@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
       if (empty($_POST["precioTotal"])) {
-        $precioTotalErr = "Este campo es obligatorio";
+        $precioTotalErr = "";
       } else {
         $precioTotal = test_input($_POST["precioTotal"]);
         if ($_POST["precioTotal"] < 0) {
@@ -48,9 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         return $data;
       }
 ?>
-<img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%>
+<a href="../../html/log.html" ><img class="imagen" src="../../../images/logo.png" alt="logo.png" width=23% height=23%></a>
     <div class="block">
-        <a href="#" class="acerca">Acerca de nosotros</a>
+        <a href="../../html/about-us.html" class="acerca">Acerca de nosotros</a>
         <!-- Estos bloques definen las id que se usan para el js de la hora -->
         <div id="box">
             <div id="box-date"></div>
@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span id="errorFecha" class="error"> <?php echo $fechaFacturaErr;?></span>
         </p>
           &emsp;
-          Precio total: <input placeholder="Precio total" type="text" id="precioTotal" name="precioTotal" value="<?php echo $precioTotal;?>"
+          Precio total: <input required placeholder="Precio total" type="text" id="precioTotal" name="precioTotal" value="<?php echo $precioTotal;?>"
                                 onkeyup="document.getElementById('errorPrecio').innerHTML = priceValidation(document.getElementById('precioTotal').value)">
           <span id="errorPrecio" class="error"> <?php echo $precioTotalErr;?></span> 
         <br>         

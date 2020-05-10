@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8" lang="es">
-    <title>Usuario</title>
-    <link rel="stylesheet", type="text/css", href="../css/user.css">
+    <title>Lista encargo/trabajo</title>
+    <link rel="stylesheet" type="text/css" href="../css/listaEncargosTrabajos.css">
 </head>
-
 <body>
+    
     <a href="log.html" ><img class="imagen" src="../../images/logo.png" alt="logo.png" width=23% height=23%></a>
+
     <div class="block">
         <a href="about-us.html" class="acerca">Acerca de nosotros</a>
         <!-- Estos bloques definen las id que se usan para el js de la hora -->
@@ -29,15 +31,9 @@
             <option value="3">Opcion 3</option>
         </select>
     </div>
-    <img src= "../../images/user.png" class="user" width="10%" height="18%">
-    <a href="#" class="edit">Editar perfil</a>
-    <div class="bloque">
-        <p class="nombre">Nombre:</p>
-        <p class="apellidos">Apellidos:</p>
-        <p class="edad">Edad:</p>
-        <p class="cargo">Cargo:</p>
-        <p class="estudios">Estudios:</p>
-
-    </div>
+    <a href="../php/formularios/form_alta_trabajos.php" class="botonNuevoTrabajo">Nuevo Trabajo</a>
+    <a href="../php/formularios/form_alta_encargo.php"class="botonNuevoEncargo">Nuevo Encargo</a>
     <script src="../js/hora.js"></script>
+    <a href="accesorapido.html" class="buttonAtras">«</a> 
+    <p class="volver">Volver</p>
 </body>

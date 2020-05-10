@@ -138,85 +138,43 @@ span.s-time {
 span.f-time {
     font-size: 0.8vw;
   }
-
-.bloqueIzquierda{
+.botonNuevaFactura {
+    background-color:#ffffff;
+	border-radius:40%;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1vw;
+	padding:1% 1%;
+	text-decoration:none;
     position: absolute;
-    display: flex;
-    left: 5%;
-    top:24.5%;
-    background-color: white;
-    width: 55%;
-    height: 70%;
-    border: 2px solid black;
-    font-weight: bold;
-    font-family: fantasy;
-    font-size: 100%;
+    top:23%;
+    left:5%;
     
-        
     }
-.link1{
+.buttonAtras {
+    background-color:#413c3c;
+	border-radius:40%;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1vw;
+	padding:2% 3%;
+	text-decoration:none;
     position: absolute;
-    display: flex;
-    font-size: 1vw;
-    top: 75%;
-    left: 10%;
-}
-.link2{
-    position: absolute;
-    display: flex;
-    font-size: 1vw;
     top: 80%;
-    left: 10%;
+    left: 5%;
 }
-.link3{
-    position: absolute;
-    display: flex;
-    font-size: 1vw;
-    top: 85%;
-    left: 10%;
-}
-
-.texto{
-    position: absolute;
-    display: flex;
-    font-size: 1.4vw;
-    color: black;
+.volver{
+    color:black;
     font-family: fantasy;
-    top:30%;
-    left:19%;
-
-}
-.twitter{
-    position: fixed;
-    left: 8%;
-    top:79.5%;
-    display: flex;
-    max-width: 100%;
-    height: auto;
-}
-.facebook{
-    position: fixed;
-    left: 8%;
-    top:75.5%;
-    display: flex;
-    max-width: 100%;
-    height: auto;
-}
-.instagram{
-    position: fixed;
-    left: 8%;
-    top:83.5%;
-    display: flex;
-    max-width: 100%;
-    height: auto;
-}
-
-.mascota{
+    font-weight: bold;
+    font-size: 1vw;
     position: absolute;
-    z-index: 1;
-    left:65%;
-    top:30%;
-    display: flex;
-    max-width: 100%;
-    height: auto;
+    left: 7%;
+    top: 90%;
 }
