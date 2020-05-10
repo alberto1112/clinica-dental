@@ -40,17 +40,17 @@ EXECUTE crear_factura('10/01/19','15/01/19','20/12/18',230);
 EXECUTE crear_factura('07/02/20','19/02/20','30/01/20',775);
 EXECUTE crear_factura(null,'30/07/20','09/05/20',900);
 --inserción de encargos
-EXECUTE crear_encargo('10/01/20','17/03/20','acciones realizadas 1');
-EXECUTE crear_encargo('20/02/20','23/05/20','acciones realizadas 2');
-EXECUTE crear_encargo('14/11/19','17/01/20','acciones realizadas 3');
-EXECUTE crear_encargo('10/05/20',null,'acciones realizadas 4');
-EXECUTE crear_encargo('23/07/19','05/10/19','acciones realizadas 5');
-EXECUTE crear_encargo('29/09/19','27/10/19','acciones realizadas 6');
-EXECUTE crear_encargo('17/04/20',null,'acciones realizadas 7');
-EXECUTE crear_encargo('22/02/19','25/04/19','acciones realizadas 8');
-EXECUTE crear_encargo('28/05/19','17/07/19','acciones realizadas 9');
-EXECUTE crear_encargo('23/03/20',null,'acciones realizadas 10');
-EXECUTE crear_encargo('14/08/19','30/10/19','acciones realizadas 11');
+EXECUTE crear_encargo('10/01/20','17/03/20','acciones realizadas 41');
+EXECUTE crear_encargo('20/02/20','23/05/20','acciones realizadas 42');
+EXECUTE crear_encargo('14/11/19','17/01/20','acciones realizadas 43');
+EXECUTE crear_encargo('10/05/20',null,'acciones realizadas 44');
+EXECUTE crear_encargo('23/07/19','05/10/19','acciones realizadas 45');
+EXECUTE crear_encargo('29/09/19','27/10/19','acciones realizadas 46');
+EXECUTE crear_encargo('17/04/20',null,'acciones realizadas 47');
+EXECUTE crear_encargo('22/02/19','25/04/19','acciones realizadas 48');
+EXECUTE crear_encargo('28/05/19','17/07/19','acciones realizadas 49');
+EXECUTE crear_encargo('23/03/20',null,'acciones realizadas 50');
+EXECUTE crear_encargo('14/08/19','30/10/19','acciones realizadas 51');
 --inserción de proveedores
 EXECUTE crear_proveedor('nombre1','Sevilla','123456789');
 EXECUTE crear_proveedor('nombre2','Cantillana','987654321');
