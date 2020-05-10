@@ -50,7 +50,7 @@ CREATE TABLE Facturas(
     Fecha_Cobro date,
     Fecha_Vencimiento date,
     Fecha_Factura date,
-    Precio_total number(7,4) CHECK (precio_total > 0),
+    Precio_total number(7,2) CHECK (precio_total > 0),
     PRIMARY KEY (OID_F)
 );
 

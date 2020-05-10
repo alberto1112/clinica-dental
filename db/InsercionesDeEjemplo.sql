@@ -15,30 +15,29 @@ EXECUTE crear_clinica('Profident Clinic','Carmona','123456789','N','Asunción','
 EXECUTE crear_clinica('Clinica','Tocina','749214739','N','Aguas Santas','6789');
 EXECUTE crear_clinica('nombreclinica','Cantillana','000111555','N','Rodrigo','0129');
 --inserción de pacientes
-EXECUTE crear_paciente('12345678C','23/04/90','H',1);
-EXECUTE crear_paciente('12345678M','12/12/62','M',2);
-EXECUTE crear_paciente('12341278B','01/05/00','H',3);
-EXECUTE crear_paciente('32345678X','11/01/99','H',4);
-EXECUTE crear_paciente('12342348Z','22/11/92','H',5);
-EXECUTE crear_paciente('12395372T','09/09/99','M',6);
-EXECUTE crear_paciente('74924739S','28/04/39','M',7);
-EXECUTE crear_paciente('97345983G','12/03/89','M',8);
-EXECUTE crear_paciente('32587459K','10/06/94','H',9);
-EXECUTE crear_paciente('23459789F','03/04/56','H',10);
-EXECUTE crear_paciente('95353675T','07/07/77','M',4);
-EXECUTE crear_paciente('36595653A','08/08/88','H',7);
+EXECUTE crear_paciente('12345678C','23/04/90','H',21);
+EXECUTE crear_paciente('12345678M','12/12/62','M',22);
+EXECUTE crear_paciente('12341278B','01/05/00','H',23);
+EXECUTE crear_paciente('32345678X','11/01/99','H',24);
+EXECUTE crear_paciente('12342348Z','22/11/92','H',25);
+EXECUTE crear_paciente('12395372T','09/09/99','M',26);
+EXECUTE crear_paciente('74924739S','28/04/39','M',27);
+EXECUTE crear_paciente('97345983G','12/03/89','M',28);
+EXECUTE crear_paciente('32587459K','10/06/94','H',29);
+EXECUTE crear_paciente('23459789F','03/04/56','H',30);
 --insercion de facturas
 EXECUTE crear_factura(null,'30/06/20','09/05/20',350);
 EXECUTE crear_factura('12/02/19','12/03/19','05/02/19',500);
 EXECUTE crear_factura('30/10/19','10/11/19','09/10/19',100);
 EXECUTE crear_factura(null,'25/02/20','14/01/20',275);
 EXECUTE crear_factura('29/08/19','30/08/19','23/07/19',500);
-EXECUTE crear_factura('01/06/19','15/06/19','22/04/19',1250);
-EXECUTE crear_factura('07/03/20','20/03/20','10/02/20',2000);
+EXECUTE crear_factura('01/06/19','15/06/19','22/04/19',300);
+EXECUTE crear_factura('07/03/20','20/03/20','10/02/20',123);
 EXECUTE crear_factura(null,'30/07/20','20/04/20',200);
 EXECUTE crear_factura('10/01/19','15/01/19','20/12/18',230);
 EXECUTE crear_factura('07/02/20','19/02/20','30/01/20',775);
 EXECUTE crear_factura(null,'30/07/20','09/05/20',900);
+EXECUTE crear_factura(null,'30/07/20','09/05/20',12345);
 --inserción de encargos
 EXECUTE crear_encargo('10/01/20','17/03/20','acciones realizadas 41');
 EXECUTE crear_encargo('20/02/20','23/05/20','acciones realizadas 42');
