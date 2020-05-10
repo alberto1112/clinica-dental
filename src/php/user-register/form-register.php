@@ -24,6 +24,7 @@
         <meta charset="UTF-8" lang="es">
         <title> Sign in</title>
         <link rel="stylesheet" type="text/css" href="../../css/Formulario.css">
+        <script src="../../js/validacion_cliente_alta_usuario.js" type="text/javascript"></script>
     </head>
     <body>
     	<?php include_once("../cabecera.php");?>
@@ -42,7 +43,7 @@
     	
  
         <div class="propiedades">
-            <form name="altaUsuario" action="validation-register.php" method="post" novalidate>
+            <form name="altaUsuario" action="validation-register.php" method="post">
                 <fieldset>
                     <legend>Datos Personales</legend>
                     <!--<p>NIF: <input id="NIF" name="NIF" pattern="^[09]{8}[A-Z]" placeholder="12345678X" required></p>-->
@@ -58,8 +59,8 @@
                 <fieldset>
                     <legend>Nuevo Usuario</legend>
                     <p>Nombre de Usuario: <input id="user" name="user" type="text" value="<?php echo $formulario['user'];?>" placeholder="Nombre de Usuario" required></p>
-                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" required></p>
-                    <p>Confirmar Contraseña: <input id="passConf" name="passConf" type="password" placeholder="Contraseña" required></p>              
+                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" onsubmit="passwordValidation();" required></p>
+                    <p>Confirmar Contraseña: <input id="passConf" name="passConf" type="password" placeholder="Contraseña" onsubmit="passwordConfirm();" required></p>              
                 </fieldset>
         </div> 
         <input type="submit" value="Registrarse">       

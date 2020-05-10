@@ -12,6 +12,9 @@ BEGIN
   VALUES (P_NOM,P_APE,P_EMAIL,P_USUARIO,P_PASS,P_PERFIL);
 END;
 /
+
+execute insertar_usuario('javi','pacheco','pachecomarquez@gmail.com','shiny','jamau','clinica');
+
 --insertar clinica
 CREATE OR REPLACE PROCEDURE crear_clinica (
     w_nombre IN Clinicas.nombre%TYPE,
@@ -60,14 +63,14 @@ END crear_factura;
 CREATE OR REPLACE PROCEDURE crear_encargo (
     w_fecha_entrada IN encargos.fecha_entrada%TYPE,
     w_fecha_entrega IN encargos.fecha_entrega%TYPE,
-    w_acciones IN encargos.w_Acciones%TYPE,
+    w_acciones IN encargos.Acciones%TYPE,
     w_oid_pc IN encargos.oid_pc%TYPE,
     w_oid_f IN encargos.oid_f%TYPE
     
 ) IS
 BEGIN 
 INSERT INTO Encargos (fecha_entrada,fecha_entrega,acciones,oid_pc,oid_f)
-VALUES (w_fecha_entrada,w_fecha_entrega,w_accaiones,w_oid_pc,w_oid_f);
+VALUES (w_fecha_entrada,w_fecha_entrega,w_acciones,w_oid_pc,w_oid_f);
 COMMIT;
 END crear_encargo;
 /
