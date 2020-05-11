@@ -75,6 +75,9 @@ Begin
 End;
 /
 
+CALL PR_Inventario();
+EXECUTE PR_Inventario();
+
 --RF-03-02 Consultas sobre pedidos (listar pedidos)
 Create or replace procedure PR_pedidos
 is

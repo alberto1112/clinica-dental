@@ -1,6 +1,6 @@
 <?php
     require_once("../gestionBD.php");
-    require_once("gestionMaterial.php");
+    require_once("gestion-Material.php");
     require_once("../paginacion_consulta.php");
 
     if (!isset($_SESSION['login']))
