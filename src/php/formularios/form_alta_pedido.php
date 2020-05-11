@@ -4,6 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta pedido</title>
     <link rel="stylesheet", type="text/css", href="../../css/formPedido.css">
+    <script src="../../js/validacion_cliente_alta_pedido.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -63,12 +64,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
         &emsp;
-        Fecha de solicitud: &emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaSolicitud" value="<?php echo $fechaSolicitud;?>">
+        Fecha de solicitud: &emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="date" id="fechaSolicitud" name="fechaSolicitud" value="<?php echo $fechaSolicitud;?>">
         <span class="error"> <?php echo $fechaSolicitudErr;?></span>
         </p>
         &emsp;
-        Fecha de de entrega:&emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="text" name="fechaEntrega" value="<?php echo $fechaEntrega;?>">
-        <span class="error"> <?php echo $fechaEntregaErr;?></span>
+        Fecha de de entrega:&emsp; <input placeholder="dd/mm/yyyy" maxlength="10" type="date" id="fechaEntrega" name="fechaEntrega" value="<?php echo $fechaEntrega;?>"
+                                        oninput="document.getElementById('errorFecha').innerHTML = dateValidation(
+                                          document.getElementById('fechaSolicitud').value,
+                                          document.getElementById('fechaEntrega').value);">
+        <span id="errorFecha" class="error"> <?php echo $fechaEntregaErr;?></span>
         <br>
         <input type="submit" name="submit" value="Enviar" class="enviar">
         <a href="../../html/listaInventarioPedidos.html" class="buttonAtras">Atrás</a>

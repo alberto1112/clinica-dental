@@ -59,8 +59,8 @@
                 <fieldset>
                     <legend>Nuevo Usuario</legend>
                     <p>Nombre de Usuario: <input id="user" name="user" type="text" value="<?php echo $formulario['user'];?>" placeholder="Nombre de Usuario" required></p>
-                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" onsubmit="passwordValidation();" required></p>
-                    <p>Confirmar Contraseña: <input id="passConf" name="passConf" type="password" placeholder="Contraseña" onsubmit="passwordConfirm();" required></p>              
+                    <p>Contraseña: <input id="pass" name="pass" type="password" value="<?php echo $formulario['pass'];?>" placeholder="Contraseña" oninput="passwordValidation();" required></p>
+                    <p>Confirmar Contraseña: <input id="passConf" name="passConf" type="password" placeholder="Contraseña" oninput="passwordConfirm();" required></p>              
                 </fieldset>
         </div> 
         <input type="submit" value="Registrarse">       

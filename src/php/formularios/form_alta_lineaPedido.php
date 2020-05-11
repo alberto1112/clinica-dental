@@ -4,6 +4,7 @@
 <meta charset="UTF-8" lang="es">
     <title>Alta lineaPedido</title>
     <link rel="stylesheet", type="text/css", href="../../css/formLineaPedido.css">
+    <script src="../../js/validacion_cliente_alta_lineaPedido.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -65,12 +66,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
         &emsp;
-          Cantidad*:&emsp; <input placeholder="Cantidad" type="text" name="cantidad" value="<?php echo $cantidad;?>">
-          <span class="error"> <?php echo $cantidadErr;?></span>
+          Cantidad*:&emsp; <input placeholder="Cantidad" type="text" name="cantidad" id="cantidad" value="<?php echo $cantidad;?>"
+                                  onkeyup="document.getElementById('errorCantidad').innerHTML = valueValidation(document.getElementById('cantidad').value)">
+          <span id="errorCantidad" class="error"> <?php echo $cantidadErr;?></span>
         </p>
         &emsp;
-          Coste*: &emsp;<input  placeholder="Coste" type="text" name="coste" value="<?php echo $coste;?>">
-          <span class="error"> <?php echo $costeErr;?></span> 
+          Coste*: &emsp;<input  placeholder="Coste" type="text" name="coste" id="coste" value="<?php echo $coste;?>"
+                                  onkeyup="document.getElementById('errorCoste').innerHTML = valueValidation(document.getElementById('coste').value)">
+          <span id="errorCoste" class="error"> <?php echo $costeErr;?></span> 
         <p></p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
 	      <a href="../../html/listaInventarioPedidos.html" class="buttonAtras">Atrás</a>

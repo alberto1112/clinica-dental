@@ -4,6 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta requiere</title>
     <link rel="stylesheet", type="text/css", href="../../css/formClinicas.css">
+    <script src="../../js/validacion_cliente_alta_requiere.js" text="text/javascript"></script>
 </head>
 <body>  
 
@@ -57,8 +58,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error"> &emsp;* campo requerido</span></p>
         <br>
           &emsp;
-          Cantidad: &emsp; <input placeholder="Cantidad" type="text" name="cantidad" value="<?php echo $cantidad;?>">
-          <span class="error"> <?php echo $cantidadErr;?></span>
+          Cantidad: &emsp; <input required placeholder="Cantidad" type="text" name="cantidad" id="cantidad" value="<?php echo $cantidad;?>"
+                                    onkeyup="document.getElementById('errorCantidad').innerHTML = valueValidation(document.getElementById('cantidad').value)">
+          <span id="errorCantidad" class="error"> <?php echo $cantidadErr;?></span>
         <br>    
         <input type="submit" name="submit" value="Enviar" class="enviar">
 	      <a href="../../html/listaPDP.html" class="buttonAtras">Atrás</a>

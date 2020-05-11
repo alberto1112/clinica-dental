@@ -1,0 +1,1 @@
+// No hay ninguna validación para este campo pero dejo el fichero por si en un futuro se necesita
