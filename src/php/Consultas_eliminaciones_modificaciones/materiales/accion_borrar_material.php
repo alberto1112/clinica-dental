@@ -5,8 +5,8 @@
 		$material = $_SESSION["material"];
 		unset($_SESSION["material"]);
 		
-		require_once("gestionBD.php");
-		require_once("gestionarMaterial.php");
+		require_once("../../gestionBD.php");
+		require_once("gestionarMateriales.php");
 		
 		// CREAR LA CONEXIÓN A LA BASE DE DATOS
 		$conexion = crearConexionBD();

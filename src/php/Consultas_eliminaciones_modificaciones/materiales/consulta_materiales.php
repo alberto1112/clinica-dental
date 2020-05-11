@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <?php 
-                        if (isset($material) and ($material["OID_M"] == $material["OID_M"])) { ?>
+                        if (isset($material) and ($material["OID_M"] == $fila["OID_M"])) { ?>
 						    <button id="Guardar" name="Guardar" type="submit" value="Guardar">Guardar</button>
 				  <?php }else{ ?>
 						    <button id="Editar" name="Editar" type="submit" value="Editar">Editar</button>
