@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           Acciones: <textarea name="acciones" rows="5" cols="40"><?php echo $acciones;?></textarea>
           </p><br>
             <input type="submit" name="submit" value="Enviar" class="enviar">
-            <input type="submit" name="atrás" value="Atrás" class="atrás">
+            <a href="../../html/listaEncargosTrabajos.html" class="buttonAtras">Atrás</a>
       </form>
       <div class="results">
         <?php

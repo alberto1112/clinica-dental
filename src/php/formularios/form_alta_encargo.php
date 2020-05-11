@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="error"> <?php echo $fechaEntregaErr;?></span> 
           <p>         
           <input type="submit" name="submit" value="Enviar" class="enviar">
-	    <input type="submit" name="atrás" value="Atrás" class="atrás">
+          <a href="../../html/listaEncargosTrabajos.html" class="buttonAtras">Atrás</a>
       </form>
       <div class="results">
         <?php

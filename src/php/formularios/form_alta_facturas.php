@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="error"> <?php echo $precioTotalErr;?></span> 
         <br>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
-	    <input type="submit" name="atrás" value="Atrás" class="atrás">
+        <a href="../../html/listaFacturas.html" class="buttonAtras">Atrás</a>
       </form>
       <div class="results">
         <?php

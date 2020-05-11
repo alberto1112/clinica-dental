@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span class="error"> <?php echo $precioErr;?></span> 
         <p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
-	      <input type="submit" name="atrás" value="Atrás" class="atrás">
+	      <a href="../../html/listaPDP.html" class="buttonAtras">Atrás</a>
       </form>
       <div class="results">
               <?php
