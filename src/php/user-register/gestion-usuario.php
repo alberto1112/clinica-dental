@@ -14,7 +14,7 @@ function alta_usuario($conexion,$usuario) {
 		$stmt->execute();
 		return true;
 	}catch(PDOException $e){
-		//echo 'error: ' . $e->getMessage();
+		//echo $e->getMessage();
 		return false;
 	}
 }
