@@ -5,6 +5,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta proveedor</title>
     <link rel="stylesheet", type="text/css", href="../../css/formProveedor.css">
+    <script src="../../js/validacion_cliente_alta_proveedor.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -74,16 +75,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
           &emsp;
-          Nombre*:&emsp; <input required placeholder="Nombre" type="text" name="name" value="<?php echo $name;?>">
-          <span class="error"> <?php echo $nameErr;?></span>
+          Nombre*:&emsp; <input required placeholder="Nombre" type="text" name="name" id="name" value="<?php echo $name;?>"
+                                  onkeyup="document.getElementById('errorName').innerHTML = lettersValidation(document.getElementById('name').value)">
+          <span id="errorName" class="error"> <?php echo $nameErr;?></span>
         </p>
           &emsp;
-          Localización:&emsp; <input placeholder="Localizacion" type="text" name="local" value="<?php echo $local;?>">
-          <span class="error"> <?php echo $localErr;?></span> 
+          Localización:&emsp; <input placeholder="Localizacion" type="text" name="local" id="local" value="<?php echo $local;?>"
+                                      onkeyup="document.getElementById('errorLocal').innerHTML = lettersValidation(document.getElementById('local').value)">
+          <span id="errorLocal" class="error"> <?php echo $localErr;?></span> 
         <p>
         &emsp;
-          Telefono de contacto:&emsp;<input id="phone" name="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"> </input>
-          <span class="error"> <?php echo $phoneErr;?></span>
+          Telefono de contacto:&emsp;<input id="phone" name="phone" id="phone" type="text" maxlength="9" placeholder="123456789" value="<?php echo $phone;?>"
+                                              onkeyup="document.getElementById('errorPhone').innerHTML = numberValidation(document.getElementById('phone').value)">
+          <span id="errorPhone" class="error"> <?php echo $phoneErr;?></span>
         </p>
         <input type="submit" name="submit" value="Enviar" class="enviar">
 	      <input type="submit" name="atrás" value="Atrás" class="atrás">

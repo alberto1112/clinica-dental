@@ -5,6 +5,7 @@
     <meta charset="UTF-8" lang="es">
     <title>Alta producto</title>
     <link rel="stylesheet", type="text/css", href="../../css/formProducto.css">
+    <script src="../../js/validacion_cliente_alta_producto.js" type="text/javascript"></script>
 </head>
 <body>  
 
@@ -67,12 +68,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
           &emsp;
-          Nombre*: &emsp; <input  placeholder="Nombre" type="text" name="name" value="<?php echo $name;?>">
-          <span class="error"> <?php echo $nameErr;?></span>
+          Nombre*: &emsp; <input  placeholder="Nombre" type="text" name="name" id="name" value="<?php echo $name;?>"
+                                    onkeyup="document.getElementById('errorName').innerHTML = lettersValidation(document.getElementById('name').value)">
+          <span id="errorName" class="error"> <?php echo $nameErr;?></span>
         </p>
           &emsp;
-          Precio*: &emsp; <input  placeholder="Precio" type="text" name="precio" value="<?php echo $precio;?>">
-          <span class="error"> <?php echo $precioErr;?></span> 
+          Precio*: &emsp; <input  placeholder="Precio" type="text" name="precio" id="precio" value="<?php echo $precio;?>"
+                                    onkeyup="document.getElementById('errorPrecio').innerHTML = valueValidation(document.getElementById('precio').value)">
+          <span id="errorPrecio" class="error"> <?php echo $precioErr;?></span> 
         <p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
 	      <input type="submit" name="atrás" value="Atrás" class="atrás">

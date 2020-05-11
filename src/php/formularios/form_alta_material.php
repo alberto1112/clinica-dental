@@ -4,6 +4,7 @@
         <meta charset="UTF-8" lang="es">
         <title>Nuevo Material</title>
         <link rel="stylesheet" type="text/css" href="../../css/formMaterial.css">
+        <script src="../../js/validacion_cliente_alta_material.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -89,12 +90,13 @@
                 
                     <p>
                     &emsp;
-                    Nombre: &emsp; <input placeholder="Nombre" class = name type="text" name="name" value="<?php echo $name;?>">
-                    <span class="error"> <?php echo $nameErr;?></span>
+                    Nombre: &emsp; <input required placeholder="Nombre" class = name type="text" id="name" name="name" value="<?php echo $name;?>"
+                                          onkeyup="document.getElementById('errorName').innerHTML = lettersValidation(document.getElementById('name').value)">
+                    <span id="errorName" class="error"> <?php echo $nameErr;?></span>
                     </p>
 
                     <label for="categoria">&emsp; Categoría:</label>
-                    <input list="opcionesCategoria" name="categoria" id="categoria" value="<?php echo $categoria;?>">
+                    <input required list="opcionesCategoria" name="categoria" id="categoria" value="<?php echo $categoria;?>">
                     <datalist id="opcionesCategoria" >
                         <option value="Alambre">Alambre</option>
                         <option value="Dientes">Dientes</option>
@@ -109,18 +111,21 @@
                     <span class="error">* <?php echo $categoriaErr;?></span>
                     <p>
                         &emsp;
-                        Stock Inicial*: &emsp;<input required placeholder="Stock Inicial" type="text" name="stockInicial" value="<?php echo $stockInicial;?>">
-                        <span class="error"> <?php echo $stockInicialErr;?></span> 
+                        Stock Inicial*: &emsp;<input required placeholder="Stock Inicial" type="text" name="stockInicial" id="stockInicial" value="<?php echo $stockInicial;?>"
+                                                      onkeyup="document.getElementById('errorStockInicial').innerHTML = valueValidation(document.getElementById('stockInicial').value)">
+                        <span id="errorStockInicial" class="error"> <?php echo $stockInicialErr;?></span> 
                     </p>
                     <p>
                         &emsp;
-                        Stock Mínimo*: &emsp;<input  required placeholder="Stock Mínimo" type="text" name="stockMin" value="<?php echo $stockMin;?>">
-                        <span class="error"> <?php echo $stockMinErr;?></span> 
+                        Stock Mínimo*: &emsp;<input  required placeholder="Stock Mínimo" type="text" name="stockMin" id="stockMin" value="<?php echo $stockMin;?>"
+                                                      onkeyup="document.getElementById('errorStockMin').innerHTML = valueValidation(document.getElementById('stockMin').value)">
+                        <span id="errorStockMin" class="error"> <?php echo $stockMinErr;?></span> 
                     </p>
                     <p>
                         &emsp;
-                        Stock Crítico*: &emsp;<input required placeholder="Stock Crítico" type="text" name="stockCrit" value="<?php echo $stockCrit;?>">
-                        <span class="error"> <?php echo $stockCritErr;?></span> 
+                        Stock Crítico*: &emsp;<input required placeholder="Stock Crítico" type="text" name="stockCrit" id="stockCrit" value="<?php echo $stockCrit;?>"
+                                                      onkeyup="document.getElementById('errorStockCrit').innerHTML = valueValidation(document.getElementById('stockCrit').value)">
+                        <span id="errorStockCrit" class="error"> <?php echo $stockCritErr;?></span> 
                     </p>
                 <input type="submit" name="submit" value="Enviar" class="enviar">
 	            <input type="submit" name="atrás" value="Atrás" class="atrás">
