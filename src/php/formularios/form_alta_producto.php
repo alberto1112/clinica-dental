@@ -73,8 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span id="errorName" class="error"> <?php echo $nameErr;?></span>
         </p>
           &emsp;
-          Precio*: &emsp; <input  placeholder="Precio" type="text" name="precio" id="precio" value="<?php echo $precio;?>"
-                                    onkeyup="document.getElementById('errorPrecio').innerHTML = valueValidation(document.getElementById('precio').value)">
+          Precio*: &emsp; <input  placeholder="Precio" type="number" name="precio" id="precio" value="<?php echo $precio;?>" min="0">
           <span id="errorPrecio" class="error"> <?php echo $precioErr;?></span> 
         <p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">

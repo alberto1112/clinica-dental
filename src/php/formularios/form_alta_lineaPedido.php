@@ -66,13 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <p><span class="error">&emsp;* campo requerido</span></p>
         <p>
         &emsp;
-          Cantidad*:&emsp; <input placeholder="Cantidad" type="text" name="cantidad" id="cantidad" value="<?php echo $cantidad;?>"
-                                  onkeyup="document.getElementById('errorCantidad').innerHTML = valueValidation(document.getElementById('cantidad').value)">
+          Cantidad*:&emsp; <input placeholder="Cantidad" type="number" name="cantidad" id="cantidad" value="<?php echo $cantidad;?>" min="0">
           <span id="errorCantidad" class="error"> <?php echo $cantidadErr;?></span>
         </p>
         &emsp;
-          Coste*: &emsp;<input  placeholder="Coste" type="text" name="coste" id="coste" value="<?php echo $coste;?>"
-                                  onkeyup="document.getElementById('errorCoste').innerHTML = valueValidation(document.getElementById('coste').value)">
+          Coste*: &emsp;<input  placeholder="Coste" type="number" name="coste" id="coste" value="<?php echo $coste;?>" min="0">
           <span id="errorCoste" class="error"> <?php echo $costeErr;?></span> 
         <p></p>         
         <input type="submit" name="submit" value="Enviar" class="enviar">

@@ -111,20 +111,17 @@
                     <span class="error">* <?php echo $categoriaErr;?></span>
                     <p>
                         &emsp;
-                        Stock Inicial*: &emsp;<input required placeholder="Stock Inicial" type="text" name="stockInicial" id="stockInicial" value="<?php echo $stockInicial;?>"
-                                                      onkeyup="document.getElementById('errorStockInicial').innerHTML = valueValidation(document.getElementById('stockInicial').value)">
+                        Stock Inicial*: &emsp;<input required placeholder="Stock Inicial" type="number" name="stockInicial" id="stockInicial" value="<?php echo $stockInicial;?>" min="0">
                         <span id="errorStockInicial" class="error"> <?php echo $stockInicialErr;?></span> 
                     </p>
                     <p>
                         &emsp;
-                        Stock Mínimo*: &emsp;<input  required placeholder="Stock Mínimo" type="text" name="stockMin" id="stockMin" value="<?php echo $stockMin;?>"
-                                                      onkeyup="document.getElementById('errorStockMin').innerHTML = valueValidation(document.getElementById('stockMin').value)">
+                        Stock Mínimo*: &emsp;<input  required placeholder="Stock Mínimo" type="number" name="stockMin" id="stockMin" value="<?php echo $stockMin;?>" min="0">
                         <span id="errorStockMin" class="error"> <?php echo $stockMinErr;?></span> 
                     </p>
                     <p>
                         &emsp;
-                        Stock Crítico*: &emsp;<input required placeholder="Stock Crítico" type="text" name="stockCrit" id="stockCrit" value="<?php echo $stockCrit;?>"
-                                                      onkeyup="document.getElementById('errorStockCrit').innerHTML = valueValidation(document.getElementById('stockCrit').value)">
+                        Stock Crítico*: &emsp;<input required placeholder="Stock Crítico" type="number" name="stockCrit" id="stockCrit" value="<?php echo $stockCrit;?>" min="0">
                         <span id="errorStockCrit" class="error"> <?php echo $stockCritErr;?></span> 
                     </p>
                 <input type="submit" name="submit" value="Enviar" class="enviar">

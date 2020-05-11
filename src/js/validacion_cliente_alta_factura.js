@@ -16,17 +16,3 @@ function dateValidation(fechaCobro, fechaVencimiento, fechaFactura) {
     }
     return error;
 }
-
-function priceValidation(price) {
-    var valid = true;
-
-    valid = valid && price>0;
-
-    if (!valid) {
-        console.error("El precio no puede ser negativo");
-        var error = "El precio debe ser > 0";
-    } else {
-        var error = ""
-    }
-    return error;
-}

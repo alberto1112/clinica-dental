@@ -91,8 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <span id="errorFecha" class="error"> <?php echo $fechaFacturaErr;?></span>
         </p>
           &emsp;
-          Precio total: <input required placeholder="Precio total" type="text" id="precioTotal" name="precioTotal" value="<?php echo $precioTotal;?>"
-                                onkeyup="document.getElementById('errorPrecio').innerHTML = priceValidation(document.getElementById('precioTotal').value)">
+          Precio total: <input required placeholder="Precio total" type="number" id="precioTotal" name="precioTotal" value="<?php echo $precioTotal;?>" min="0">
           <span id="errorPrecio" class="error"> <?php echo $precioTotalErr;?></span> 
         <br>         
         <input type="submit" name="submit" value="Enviar" class="enviar">
