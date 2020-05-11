@@ -50,14 +50,15 @@
                     <div>
                         <?php 
                         if (isset($material) and ($material["OID_M"] == $fila["OID_M"])) { ?>
-						    <button id="Guardar" name="Guardar" type="submit" value="Guardar">Guardar</button>
+						    <button id="Guardar" name="Guardar" type="submit">Guardar</button>
 				  <?php }else{ ?>
-						    <button id="Editar" name="Editar" type="submit" value="Editar">Editar</button>
+						    <button id="Editar" name="Editar" type="submit">Editar</button>
 				  <?php } ?>
-					<button id="Borrar" name="Borrar" type="submit" value="Borrar">Borrar
+					<button id="Borrar" name="Borrar" type="submit">Borrar
 					</button>
                     </div>
                 </div>
+            </form>
         </article>
                   <?php } ?>
     </main>
